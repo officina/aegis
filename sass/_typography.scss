@@ -1,0 +1,133 @@
+// typography partial
+// Aegis UI (derived from Playlyfe Sandbox)
+// Johny Jose / Kumar Harsh
+// 23.Jan.2013
+
+// Goes best with DroidSans, so include this line in the html
+// <link rel="stylesheet" href='//fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic,300,300italic' type='text/css'>
+
+html, body {
+  height: 100%;
+}
+body {
+  // conditional style sheet for IE
+  // font-size:100%;
+  margin: 0; padding: 0;
+  border: none;
+  font-size: $base;
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
+  color: $base-color;
+}
+.fixed-width {
+  width: $min-screen-width;
+  margin: 0 auto;
+  @include clearfix();
+}
+.page-wrapper {
+  @include box-sizing('border-box');
+  padding-top: $navbar-height;
+  min-height: 100%;
+}
+.page-content {
+  overflow: auto;
+  padding-top: $page-paddingV;
+  padding-bottom: $footer-height;
+}
+
+p, body, textarea, input, select {
+  font-family: $base-font-family;
+  font-weight: normal;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
+  text-rendering: optimizeLegibility;
+  margin: $base 0;
+  &.splash {
+    font-weight: bold;
+    text-shadow: 2px 2px 3px $base-color;
+  }
+}
+h1, h2 {
+  line-height: 2 * $base-line-height;
+}
+h4, h5, h6, p {
+  line-height: $base-line-height;
+}
+
+h1 {
+  font-size: $h1-size;
+  &.splash {
+    font-size: $h1-size * 1.5;
+    line-height: 1.1em;
+    margin: 0.5em 0;
+  }
+}
+h2 {
+  font-size: $h2-size;
+}
+h3 {
+  line-height: $base-line-height * $golden;
+  font-size: $h3-size;
+}
+h4 {
+  font-size: $h4-size;
+}
+h5 {
+  font-size: $h5-size;
+  margin: $base/2 0;
+}
+h6 {
+  font-size: $h6-size;
+  // Make the h6 fat
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 2px 0;
+}
+p  {
+  font-size: $base;
+  margin: 0 0 $base;
+}
+a {
+  color: $link-color;
+  text-decoration: none;
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
+}
+.caps {
+  text-transform: uppercase;
+}
+.hl {
+  color: $accent-dark;
+}
+code, pre {
+  font-family: $mono-font-family;
+  padding: 1em 1em;
+  background-color: $code-bg;
+  color: $code-color;
+  border: 1px solid darken($code-bg, 10%);
+  margin-bottom: 1em;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  &:empty {
+    display: none;
+  }
+}
+code {
+  padding: 0.31em 0.38em 0.08em;
+  margin: 0 0.2em;
+}
+
+.text-left    { text-align: left;    }
+.text-right   { text-align: right;   }
+.text-center  { text-align: center;  }
+.text-justify { text-align: justify; }
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,186 @@
+//
+// tidbits partial
+// Aegis UI (derived from Playlyfe Sandbox)
+// Kumar Harsh
+// 23.Mar.2013
+//
+
+// The media object
+// (OOCSS / stubbornella.com)
+.media {
+  margin: 10px;
+  overflow: hidden;
+  zoom: 1;
+  .content {
+    /* use overflow for clearing floats and
+     creating new layout context */
+    overflow: hidden;
+    zoom: 1;
+  }
+  .image {
+    /* you can float the image to either left or right */
+    float: left;
+    margin-right: 10px;
+    img {
+      display: block;
+    }
+    &.right {
+      margin-right: 0;
+      margin-left: 10px;
+    }
+  }
+}
+
+// Button-type interaction for elements
+.as-button { @include button-interaction(); }
+
+//
+// This partial gives you some extra elements
+// for your page. See the demo page for examples.
+//
+.tag {
+  position: relative;
+  font-size: 12px;
+  color: $tag-color;
+  background-color: $tag-bg;
+  border: 1px solid rgba($black, 0.3);
+  padding: 0.1em 0.4em 0;
+  margin: 0.1em 0.7em 0.2em 0;
+  opacity: 0.8;
+  @include inline-block();
+  @include button-interaction();
+  &:hover { opacity: 1; }
+}
+
+// Dividers
+hr {
+  height: 0px;
+  margin: 5px auto;
+  border: none;
+  border-bottom: $divider-width solid $divider-light-color;
+  &.dark { border-bottom-color: $divider-dark-color; }
+  &.dotted { border-bottom-style: dotted; }
+  &.fat {
+    margin: 4*$divider-fat-width auto;
+    border-bottom-width: $divider-fat-width;
+  }
+}
+
+
+// Copy-able snippet.
+// Generally used for information you'd want
+// people to copy, like a url or a large random hash
+.snippet {
+  @include box-sizing('border-box');
+  @include inline-block();
+  max-width: 400px;
+  padding: 0.2em 0.5em;
+  border: $snippet-border;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 700;
+  &:hover {
+    background-color: $snippet-hover-fill;
+    color: $snippet-hover-color;
+    @include transition(
+      color 0.4s ease 0.1s,
+      background-color 0.4s ease 0.1s
+    );
+  }
+}
+
+// Tooltip
+.tooltip {
+  display: none;
+  position: absolute;
+  background-color: $tooltip-bg;
+  font-size: 0.85em;
+  color: $tooltip-color;
+  padding: $tooltip-padding;
+  border: 1px solid $tooltip-border;
+  z-index: $tooltip-z;
+  @include box-shadow(0 0 4px -1px $tooltip-border);
+
+  &:before, &:after {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 0; height: 0;
+    border: 5px solid transparent;
+    left: 50%;
+    margin-left: -5px;
+    z-index: 2;
+  }
+  &:after {
+    border-width: 7px;
+    margin-left: -7px;
+    z-index: 1;
+  }
+  &.north {
+    &:before, &:after {
+      top: -5px;
+      border-top: 0;
+    }
+    &:before { border-bottom-color: $tooltip-bg; }
+    &:after { top: -7px; border-bottom-color: $tooltip-border; }
+  }
+  &.south {
+    &:before, &:after {
+      bottom: -5px;
+      border-bottom: 0;
+    }
+    &:before { border-top-color: $tooltip-bg; }
+    &:after { bottom: -7px; border-top-color: $tooltip-border; }
+  }
+  &.east {
+    &:before, &:after { right: 10px; left: auto; margin-left: 0; }
+    &:after { margin-right: -2px; }
+  }
+  &.west {
+    &:before, &:after { left: 10px; margin-left: 0; }
+    &:after { margin-left: -2px; }
+  }
+
+  &.type-alert {
+    background-color: $alert;
+    color: $white;
+    border-color: darken($alert, 10%);
+    @include box-shadow(0 0 4px -1px rgba($alert, 0.5));
+    &.north {
+      &:before { border-bottom-color: $alert; }
+      &:after { border-bottom-color: darken($alert, 10%); }
+    }
+    &.south {
+      &:before { border-top-color: $alert; }
+      &:after { border-top-color: darken($alert, 10%); }
+    }
+  }
+  &.type-info {
+    background-color: $accent;
+    color: $white;
+    border-color: $accent-dark;
+    @include box-shadow(0 0 4px -1px rgba($accent, 0.5));
+    &.north {
+      &:before { border-bottom-color: $accent; }
+      &:after { border-bottom-color: $accent-dark; }
+    }
+    &.south {
+      &:before { border-top-color: $accent; }
+      &:after { border-top-color: $accent-dark; }
+    }
+  }
+  &.type-prime {
+    background-color: $prime;
+    color: $white;
+    border-color: $prime-dark;
+    @include box-shadow(0 0 4px -1px rgba($prime, 0.5));
+    &.north {
+      &:before { border-bottom-color: $prime; }
+      &:after { border-bottom-color: $prime-dark; }
+    }
+    &.south {
+      &:before { border-top-color: $prime; }
+      &:after { border-top-color: $prime-dark; }
+    }
+  }
+}

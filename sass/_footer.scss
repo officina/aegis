@@ -1,0 +1,27 @@
+// footer partial
+// Aegis UI (derived from Playlyfe Sandbox)
+// Kumar Harsh
+// 4.Jun.2013
+
+.footer {
+  @include box-sizing('border-box');
+  position: relative;
+  // margin top will be equal to the footer dimensions
+  margin-top: -$footer-height;
+  height: $footer-height;
+  padding: $footer-paddingV 0;
+  border-top: 1px solid $footer-border;
+  background-color: $footer-bg;
+  z-index: $footer-z;
+  .nav {
+    text-align: center;
+    li {
+      padding-left: 20px;
+      padding-right: 20px;
+      color: $gray-dark;
+      a { color: $gray-light;
+        &:hover { color: $prime-dark; }
+      }
+    }
+  }
+}

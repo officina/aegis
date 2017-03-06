@@ -1,0 +1,17 @@
+// list partial
+// Aegis UI (derived from Playlyfe Sandbox)
+// Kumar Harsh
+// 4.Jun.2013
+
+.list-unstyled {
+  margin: 0; padding: 0;
+  list-style: none;
+}
+.list-inline {
+  word-spacing: -0.26em;
+  > li {
+    @include inline-block();
+    padding: 0 0.5em;
+    word-spacing: normal;
+  }
+}

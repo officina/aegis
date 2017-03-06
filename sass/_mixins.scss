@@ -1,0 +1,67 @@
+// Utility mixins
+
+// clearfix
+@mixin clearfix() {
+  &:before,
+  &:after {
+    display: table;
+    line-height: 0;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// apply on <a> tags to remove underline
+@mixin no-anchor {
+  text-decoration: none !important;
+  outline: none;
+}
+
+// make the text unselectable (in supported browsers)
+@mixin no-select() {
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; // unsupported yet.
+}
+
+// give non-button elements properties of a button
+@mixin button-interaction() {
+  @include no-select();
+  @include no-anchor;
+  cursor: pointer;
+}
+
+@mixin tab-focus() {
+  // Default
+  outline: 3px solid rgba($gold, 0.5);
+  outline-offset: -3px;
+}
+
+// animation mixins
+// when compass 0.13 comes out,
+// this will be removed
+@mixin animation($opts) {
+  -webkit-animation: $opts;
+     -moz-animation: $opts;
+      -ms-animation: $opts;
+       -o-animation: $opts;
+          animation: $opts;
+}
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}

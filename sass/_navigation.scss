@@ -1,0 +1,93 @@
+// navigation partial
+// Aegis UI (derived from Playlyfe Sandbox)
+// Kumar Harsh
+// 20.Jan.2013
+
+.nav {
+  @include clearfix();
+  @extend .list-unstyled;
+  margin: 0; padding: 0;
+}
+.nav-link { // a
+  @include button-interaction();
+  display: block;
+}
+.nav-inline {
+  > li {
+    @include inline-block();
+    padding: 0;
+  }
+}
+.navbar {
+  position: fixed;
+  @include box-sizing('border-box');
+  background-color: $navbar-bg;
+  border-bottom: 1px solid $navbar-border;
+  z-index: $navbar-z;
+  width: 100%;
+  top: 0;
+  .navbar-inner {
+    height: $navbar-height;
+  }
+  .navbar-item { // li
+    float: left;
+    display: block;
+    @include transition(background 200ms ease-out 100ms);
+    &:hover, &.active { background-color: $navbar-hover-bg; }
+  }
+  .navbar-link, .navbar-item > a { // a
+    @extend .nav-link;
+    color: $navbar-color;
+    line-height: $navbar-height;
+    padding: 0 ($navbar-height - $navbar-icon-height)/2;
+    @include transition(color 200ms ease-out 100ms);
+    &:hover {
+      color: $navbar-hover-color;
+    }
+  }
+
+  // styles for the website logo
+  .crest {
+    display: block;
+    float: left;
+    @include button-interaction();
+    @include box-sizing('border-box');
+    padding: 6px 12px 5px 0;
+    line-height: $navbar-height;
+    height: $navbar-height;
+    color: transparent;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+// Dropdown menus
+.dropdown {
+  position: relative;
+  // use either the -nav (ul,ol) or the -wrapper (divs, etc) versions
+  // don't use both together
+  .dropdown-nav, .dropdown-wrapper {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: $dropdown-bg;
+    border: 1px solid $dropdown-border;
+    border-top: none;
+    z-index: $dropdown-z;
+  }
+  &:hover, &.active {
+    .dropdown-nav, .dropdown-wrapper {
+      display: block;
+    }
+  }
+}
+.navbar {
+  .dropdown-nav {
+    border-color: $navbar-border;
+  }
+  .dropdown-nav > li, .dropdown-wrapper > .nav > li {
+    float: none;
+  }
+}

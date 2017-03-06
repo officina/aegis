@@ -1,0 +1,43 @@
+.tab-bar {
+  position: relative;
+  border-bottom: 1px solid $tabbar-trim;
+  z-index: 2;
+}
+.tab-item {
+  @include box-sizing('border-box');
+  @include transition(border-color 0.3s ease 0.1s);
+  float: left;
+  display: block;
+  text-align: center;
+  height: $tabbar-height;
+  line-height: $tabbar-height;
+  vertical-align: baseline;
+  border-bottom: 1px solid $tabbar-trim;
+  /* shift the items 1px to sit on tabbar's border */
+  margin-bottom: -1px;
+  a {
+    @extend .nav-link;
+    padding: 0 1em;
+    color: $tabbar-color;
+    @include transition(color 0.2s ease 0.1s);
+  }
+  &:hover {
+    border-bottom: 3px solid $tabbar-hover-color;
+    a, a:hover { color: $tabbar-hover-color; }
+  }
+  &.live {
+    font-weight: bold;
+    border-bottom: 5px solid $tabbar-active-color;
+    @include transition(border-width 0.3s ease 0.1s);
+    a { color: $tabbar-active-color; }
+    &:hover {
+      a, a:hover { color: lighten($tabbar-active-color, 10%); }
+      border-bottom-color: lighten($tabbar-active-color, 10%);
+    }
+  }
+}
+.tab-content {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
