@@ -34,6 +34,7 @@ $white:                 #fff !default;
 
 // Accents
 $green:                 #95d905 !default;
+$darkred:               #990000 !default;
 $blue:                  #1b5ddf !default;
 $sky:                   #259dff !default;
 $navy:                  #023c7c !default;
@@ -46,7 +47,7 @@ $yellow:                #ffcc00 !default;
 
 // Primaries
 // TODOKHS: normalize the colours
-$prime:                 desaturate($green, $golden * 10) !default;
+$prime:                 desaturate($darkred, $golden * 10) !default;
 $accent:                $sky !default;
 $alert:                 $red !default;
 
