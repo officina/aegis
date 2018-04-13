@@ -22,19 +22,20 @@ $min-screen-width:      1024px !default;
 
 // Grays
 $black:                 #000 !default;
-$gray-darkest:          #222 !default;
-$gray-darker:           #333 !default;
-$gray-dark:             #555 !default;
-$gray:                  #777 !default;
-$gray-light:            #999 !default;
-$gray-lighter:          #bbb !default;
-$gray-lightest:         #ddd !default;
-$gray-ultralight:       #eee !default;
+$gray-darkest:          #363738 !default;
+$gray-darker:           #474849 !default;
+$gray-dark:             #58595a !default;
+$gray:                  #7a7b7c !default;
+$gray-light:            #9c9d9e !default;
+$gray-lighter:          #bebfc0 !default;
+$gray-lightest:         #e0e1e2 !default;
+$gray-ultralight:       #f1f2f3 !default;
 $white:                 #fff !default;
 
 // Accents
 $green:                 #95d905 !default;
 $darkred:               #990000 !default;
+$greengetplayoff:       #14cbab !default;
 $blue:                  #1b5ddf !default;
 $sky:                   #259dff !default;
 $navy:                  #023c7c !default;
@@ -47,7 +48,7 @@ $yellow:                #ffcc00 !default;
 
 // Primaries
 // TODOKHS: normalize the colours
-$prime:                 desaturate($darkred, $golden * 10) !default;
+$prime:                 desaturate($greengetplayoff, $golden * 10) !default;
 $accent:                $sky !default;
 $alert:                 $red !default;
 
