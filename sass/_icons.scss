@@ -230,4 +230,4 @@ a [class*=" icon-"]:before {
 .icon-unpin:before                    { content: '\E0A3'; }
 .icon-shine:before                    { content: '\E0A4'; }
 .icon-pl:before                       { content: '\E0A5'; }
-.icon-playlyfe:before                 { content: url('/images/common/icon-playlyfe.svg'); width: 330px; display: inline-block !important; }
+.icon-playlyfe:before                 { content: url('#{$images-path}/icon-playlyfe.svg'); width: 330px; display: inline-block !important; }
