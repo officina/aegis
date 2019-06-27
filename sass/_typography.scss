@@ -131,12 +131,3 @@ code {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('#{$icon-font-path}/Montserrat-Light.woff2') format('woff2'),
-  url('#{$icon-font-path}/Montserrat-Light.woff') format('woff'),
-  url('#{$icon-font-path}/Montserrat-Light.eot') format('eot');
-  font-weight: normal;
-  font-style: normal;
-}
